@@ -13,6 +13,7 @@ import {
     Thead,
     Tbody,
     Spacer,
+    Loading,
 } from "@yakad/ui";
 
 export default function Page() {
@@ -45,12 +46,14 @@ export default function Page() {
                         <Tr>
                             <Th>Property</Th>
                             <Th>Value</Th>
+                            <Th>Defult</Th>
                         </Tr>
                     </Thead>
                     <Tbody>
                         <Tr>
                             <Td>Size</Td>
                             <Td>small | medium | large</Td>
+                            <Td>medium</Td>
                         </Tr>
                         <Tr>
                             <Td>Variant</Td>
@@ -58,9 +61,33 @@ export default function Page() {
                                 text | outlined | filled | filledtonal | tonal |
                                 elevated | link | fab
                             </Td>
+                            <Td>text</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>Borderstyle</Td>
+                            <Td>none | semi | squircle | rounded </Td>
+                            <Td>rounded</Td>
+                        </Tr>
+                    </Tbody>
+                    <Tbody>
+                        <Tr>
+                            <Td>Iconposition</Td>
+                            <Td> start | end </Td>
+                            <Td>start</Td>
+                        </Tr>
+                    </Tbody>
+                    <Tbody>
+                        <Tr>
+                            <Td>Loadingvariant</Td>
+                            <Td> scaleOut | dots | spinner </Td>
+                            <Td>Undefined</Td>
                         </Tr>
                     </Tbody>
                 </Table>
+                <p>
+                    Also, the Button accepts the default attributes of a Button
+                    elemnt.
+                </p>
                 <h3>Size:</h3>
                 <p>you can use different size button.</p>
                 <Card
@@ -148,56 +175,7 @@ export default function Page() {
                     </Row>
                 </Card>
 
-                <h3>FAB size:</h3>
-                <p>Different sizes of buttons with variant fab</p>
-                <Card
-                    align="center"
-                    style={{
-                        maxWidth: "60rem",
-                        margin: "auto",
-                    }}
-                >
-                    <Stack>
-                        <Row
-                            style={{
-                                justifyContent: "center",
-                            }}
-                        >
-                            <Button variant="fab" size="small">
-                                SMALL
-                            </Button>
-                            <Button variant="fab" size="medium">
-                                MEDIUM
-                            </Button>
-                            <Button variant="fab" size="large">
-                                LARGE
-                            </Button>
-                        </Row>
-                        <Row
-                            style={{
-                                justifyContent: "center",
-                            }}
-                        >
-                            <Button
-                                variant="fab"
-                                size="small"
-                                icon={<Symbol icon="add" />}
-                            ></Button>
-                            <Button
-                                variant="fab"
-                                size="medium"
-                                icon={<Symbol icon="add" />}
-                            ></Button>
-                            <Button
-                                variant="fab"
-                                size="large"
-                                icon={<Symbol icon="add" />}
-                            ></Button>
-                        </Row>
-                    </Stack>
-                </Card>
-
-                <h3>icon:</h3>
+                <h3>Iconposition:</h3>
                 <p>
                     With this property, you can easily add different icons on
                     your buttons.
@@ -224,10 +202,6 @@ export default function Page() {
                         >
                             Search
                         </Button>
-                        <Button
-                            variant="outlined"
-                            icon={<Symbol icon="search" />}
-                        ></Button>
                     </Row>
                 </Card>
             </Container>
@@ -239,102 +213,13 @@ export default function Page() {
 function ButtonLoading() {
     return (
         <Container size="md">
-            <h3>Loading:</h3>
-            <p>With this option, you can put a loading sign on the buttons</p>
-            <Card align="center" style={{ maxWidth: "60rem" }}>
-                <Row style={{ justifyContent: "center" }}>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="dots"
-                        disabled
-                    >
-                        Loading
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="dots"
-                        iconposition="end"
-                        disabled
-                    >
-                        Loading
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="dots"
-                        iconposition="end"
-                        disabled
-                    ></Button>
-                </Row>
-                <Row style={{ justifyContent: "center", padding: "20px" }}>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="scaleOut"
-                        disabled
-                    >
-                        Loading
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="scaleOut"
-                        iconposition="end"
-                        disabled
-                    >
-                        Loading
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="scaleOut"
-                        disabled
-                    ></Button>
-                </Row>
-
-                <Row style={{ justifyContent: "center" }}>
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="spinner"
-                        disabled
-                    >
-                        Loading
-                    </Button>{" "}
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="spinner"
-                        iconposition="end"
-                        disabled
-                    >
-                        Loading
-                    </Button>{" "}
-                    <Button
-                        variant="outlined"
-                        icon={<Symbol icon="search" />}
-                        loadingposition="auto"
-                        loadingvariant="spinner"
-                        disabled
-                    ></Button>
-                </Row>
-            </Card>
             <h3>Loading Variant:</h3>
             <p>
                 And this is also different loading models that you can use
                 whichever you like.
             </p>
-            <Card style={{ maxWidth: "60rem" }} align="center">
+            <p>The loading indicator is visible when the button is disabled.</p>
+            <Card style={{ maxWidth: "60rem", padding: "30px" }} align="center">
                 <Row align="center">
                     <Button
                         variant="outlined"
@@ -345,6 +230,7 @@ function ButtonLoading() {
                     >
                         Loading
                     </Button>
+                    <Spacer />
                     <Button
                         variant="outlined"
                         icon={<Symbol icon="search" />}
@@ -354,6 +240,7 @@ function ButtonLoading() {
                     >
                         Loading
                     </Button>
+                    <Spacer />
                     <Button
                         variant="outlined"
                         icon={<Symbol icon="search" />}

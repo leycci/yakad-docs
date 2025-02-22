@@ -49,8 +49,13 @@ export default function Page() {
                         <Td>positionSticky</Td>
                         <Td>True | False</Td>
                     </Tr>
+                    <Tr>
+                        <Td>default</Td>
+                        <Td>False</Td>
+                    </Tr>
                 </Tbody>
             </Table>
+            <p>Also, the AppBar accepts the attributes of a div.</p>
             <h3>PositionSticky</h3>
             <p>
                 If you scroll the page, the <b>AppBar</b> remains fixed
